@@ -1,9 +1,15 @@
 # Yet Another Trello Clone (YATC)
-Yet another Trello clone built with Typescript, React and Styled Components
+Yet another Trello clone built with Typescript, React and Styled Components.
 
 ## Available Scripts
+### Initial Setup
+To install all the required dependencies in this project simply run the following command
 
-In the project directory, you can run:
+`npm install`
+
+If you encountered any errors, you could do a clean install instead
+
+`npm ci`
 
 ### `npm start`
 
