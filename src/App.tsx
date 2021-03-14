@@ -1,21 +1,17 @@
 import { Column } from "./Column";
-import { Card } from "./Card";
 import { AddNewItem } from "./AddNewItem";
 import { AppContainer } from "./styles";
 import "./reset.css";
+import { useAppState } from "./AppStateContext";
 
 const App = () => {
+  const { state } = useAppState();
+
   return (
     <AppContainer>
-      <Column text="To Do 1">
-        <Card text="Hello there! This is a text props" />
-      </Column>
-      <Column text="To Do 2">
-        <Card text="Hello there! This is a text props" />
-      </Column>
-      <Column text="To Do 3">
-        <Card text="Hello there! This is a text props" />
-      </Column>
+      {state.lists.map((list, idx) => (
+        <Column text={list.text} key={list.id} index={idx} />
+      ))}
       <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
